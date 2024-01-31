@@ -7,6 +7,7 @@ import heroImg02 from '../assets/images/heroimg2.jpg'
 // import heroVideo from '../assets/images/hero-video.mp4'
 import worldImg from '../assets/images/world.jpg'
 import Subtitle from "../shared/Subtitle";
+import SearchBar from "../shared/SearchBar";
 
 
 const Home = () => {
@@ -28,6 +29,22 @@ const Home = () => {
                             </p>
                         </div>
                     </Col>
+                    <Col lg='2'>
+                        <div className="hero__img-box">
+                            <img src={heroImg} alt="" />
+                        </div>
+                    </Col>
+                    <Col lg='2'>
+                        <div className="hero__img-box mt-4">
+                            <img src={heroImg} alt="" />
+                        </div>
+                    </Col>
+                    <Col lg='2'>
+                        <div className="hero__img-box mt-5">
+                            <img src={heroImg02} alt="" />
+                        </div>
+                    </Col>
+                    <SearchBar />
                 </Row>
             </Container>
         </section>
