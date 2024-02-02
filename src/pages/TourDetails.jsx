@@ -14,7 +14,9 @@ const TourDetails = () => {
 
     const { photo, title, desc, price, address, reviews, city, distance, maxGroupSize } = tour
 
-    const { totalRating, avgRating } = calculateAvgRating(reviews)
+    const { totalRating, avgRating } = calculateAvgRating(reviews);
+
+    const options ={day: "numeric", month: "long", year: "numeric"};
 
     return <>
         <section>
@@ -87,8 +89,15 @@ const TourDetails = () => {
                                                 <img src={avatar} alt="" />
                                                 <div className="w-100">
                                                     <div className="d-flex align-items-center justify-content-between">
-
+                                                        <div>
+                                                        <h5>muhib</h5>
+                                                        <p>{new Date('01-18-2023').toLocaleDateString('en-US', options)}</p>
+                                                        </div>
+                                                        <span className="d-flex align-items-center">
+                                                            5<i class="ri-star-fill"></i>
+                                                        </span>
                                                     </div>
+                                                    <h6>Amazing Tour</h6>
                                                 </div>
                                             </div>
                                         ))
