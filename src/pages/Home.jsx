@@ -51,7 +51,7 @@ const Home = () => {
                             <img src={heroImg02} alt="" />
                         </div>
                     </Col>
-                    <SearchBar />
+                    {/* <SearchBar /> */}
                 </Row>
             </Container>
         </section>
@@ -146,7 +146,7 @@ const Home = () => {
         { /* ======================= gallery section end ================= */}
 
         { /* ======================= testimonial section Start ================= */}
-        <section>
+        {/* <section>
             <Container>
                 <Row>
                     <Col lg = '12'>
@@ -158,10 +158,10 @@ const Home = () => {
                     </Col>
                 </Row>
             </Container>
-        </section>
+        </section> */}
 
         { /* ======================= testimonial section end ================= */}
-        < Newsletter />
+        {/* < Newsletter /> */}
     </>
     
 };

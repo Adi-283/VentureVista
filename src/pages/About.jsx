@@ -73,7 +73,7 @@ const About = () => {
         { /* ======================= gallery section end ================= */}
 
         { /* ======================= testimonial section Start ================= */}
-        <section>
+        {/* <section>
             <Container>
                 <Row>
                     <Col lg = '12'>
@@ -85,10 +85,10 @@ const About = () => {
                     </Col>
                 </Row>
             </Container>
-        </section>
+        </section> */}
 
         { /* ======================= testimonial section end ================= */}
-        < Newsletter />
+        {/* < Newsletter /> */}
     </>
     
 };

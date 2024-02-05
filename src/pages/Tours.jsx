@@ -23,7 +23,7 @@ const Tours = () => {
     <section>
         <Container>
             <Row>
-                <SearchBar />
+                {/* <SearchBar /> */}
             </Row>
         </Container>
         </section>
@@ -52,7 +52,7 @@ const Tours = () => {
             </Row>
         </Container>
         </section>
-        < NewsLetter/>
+        {/* < NewsLetter/> */}
     </>
     );
 }
