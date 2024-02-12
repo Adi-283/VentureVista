@@ -14,12 +14,16 @@ const nav__links=[
         display: 'Home'
     },
     {
+        path:'/tours',
+        display: 'Tours'
+    },
+    {
         path:'/about',
         display: 'About'
     },
     {
-        path:'/tours',
-        display: 'Tours'
+        path:'/contactus',
+        display: 'Contact Us'
     },
 
 ]

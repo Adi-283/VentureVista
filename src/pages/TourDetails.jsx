@@ -112,7 +112,7 @@ const TourDetails = () => {
                                                 <div className="w-100">
                                                     <div className="d-flex align-items-center justify-content-between">
                                                         <div>
-                                                        <h5>muhib</h5>
+                                                        <h5>Pratik</h5>
                                                         <p>{new Date('01-18-2023').toLocaleDateString('en-US', options)}</p>
                                                         </div>
                                                         <span className="d-flex align-items-center">
@@ -135,7 +135,7 @@ const TourDetails = () => {
                 </Row>
             </Container>
         </section >
-        <Newsletter />
+        {/* <Newsletter /> */}
     </>
 }
 
