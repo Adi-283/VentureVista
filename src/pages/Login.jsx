@@ -46,6 +46,7 @@ const Login = () => {
             saveCredentialsToLocalStorage(credentials);
     
             // Redirect to the home page using navigate
+            alert("Successfull login");
             navigate('/');
         } else {
             setError({ email: 'Invalid email', password: 'Invalid password' });
