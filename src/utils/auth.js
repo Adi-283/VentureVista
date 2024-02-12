@@ -36,8 +36,14 @@ export const saveCredentialsToLocalStorage = (credentials) => {
 
 export const validateRegistration = (username, email, password) => {
     const usernameError = !username ? 'Please enter your username.' : '';
-    const emailError = !email ? 'Please enter your email.' : '';
-    const passwordError = !password ? 'Please enter your password.' : '';
+    const emailError = validateEmail(email);
+    const passwordError = validatePassword(password);
+
+    if (emailError || passwordError || usernameError) {
+        return { email: emailError, password: passwordError };
+    }
+
+   
 
     return { username: usernameError, email: emailError, password: passwordError };
 };
