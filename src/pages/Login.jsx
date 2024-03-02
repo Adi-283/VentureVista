@@ -1,25 +1,57 @@
 import React,  {useState}from "react";
 import { Container, Row, Col, Form, FormGroup, Button } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { validateLogin, saveCredentialsToLocalStorage } from "../utils/auth";
 import '../styles/login.css';
 import loginImg from '../assets/images/login.jpg'
 import userIcon from '../assets/images/user.jpg'
+
+
 const Login = () => {
-
     const [credentials, setCredentials] = useState({
-       email:undefined,
-       password:undefined
-    })
+        email: '',
+        password: ''
+    });
 
-    const handleChange = e => {
-        setCredentials(prev => ({ ...prev, [e.target.id]: e.target.value }))
+    const [error, setError] = useState('');
+    const navigate = useNavigate(); // Use useNavigate instead of useHistory
+
+    const handleChange = (e) => {
+        setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+        setError('');
     };
 
-
-    const handleClick = e =>{
-        e.preventDefault()
-    };
-    return (
+    const handleClick = (e) => {
+        e.preventDefault();
+    
+        const validationErrors = validateLogin(credentials.email, credentials.password);
+    
+        if (validationErrors.email || validationErrors.password) {
+            setError(validationErrors);
+            return;
+        }
+    
+        // Check login logic here
+        const storedCredentials = JSON.parse(localStorage.getItem('user'));
+    
+        console.log("Entered Credentials:", credentials);
+        console.log("Stored Credentials:", storedCredentials);
+    
+        if (
+            storedCredentials &&
+            storedCredentials.email === credentials.email &&
+            storedCredentials.password === credentials.password
+        ) {
+            
+            saveCredentialsToLocalStorage(credentials);
+    
+            // Redirect to the home page using navigate
+            alert("Successfull login");
+            navigate('/');
+        } else {
+            setError({ email: 'Invalid email', password: 'Invalid password' });
+        }
+    };   return (
 
     <section>
 
@@ -36,14 +68,16 @@ const Login = () => {
                          </div>
                          <h2>Login</h2>
                          <Form>
-                            <FormGroup>
-                                <input type ="email" placeholder="Email" required id="email" onChange={handleChange}/>
-                            </FormGroup>
-                            <FormGroup>
-                                <input type ="password" placeholder="Password" required id="password" onChange={handleChange}/>
-                            </FormGroup>
-                            <button className="btn secondary__btn auth__btn" type= "submit">Login </button>
-                            <p> Don't have any account?  <Link to= '/register'>create</Link> </p>
+                                    <FormGroup>
+                                        <input type="email" placeholder="Email" required id="email" onChange={handleChange} />
+                                        {error.email && <p className="error-message">{error.email}</p>}
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <input type="password" placeholder="Password" required id="password" onChange={handleChange} />
+                                        {error.password && <p className="error-message">{error.password}</p>}
+                                    </FormGroup>
+                                    <button className="btn secondary__btn auth__btn" type="submit" onClick={handleClick}>Login </button>
+                                    <p> Don't have any account? <Link to='/register'>create</Link> </p>
                          </Form>
 
                    </div>
