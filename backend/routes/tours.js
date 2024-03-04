@@ -1,6 +1,9 @@
 
 import express from 'express'
 import {createTour,deleteTour,getAllTour,getSingleTour,updateTour,getToursBySearch, getFeaturedTour, getTourCount}  from './../controllers/tourCountroller.js';
+
+import { verifyAdmin } from '../utils/verifyToken.js';
+
 const router= express.Router();
 
 //create new tour

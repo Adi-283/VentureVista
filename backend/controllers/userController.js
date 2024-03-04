@@ -1,4 +1,4 @@
-import User from'../models/User.js'
+import User from "../models/User.js";
 
 
 //create new User
@@ -28,7 +28,7 @@ export const updateUser = async(req,res)=> {
    try {
     const updatedUser=await User.findByIdAndUpdate(id,{
         $set:req.body
-    },{new: true})
+    },{new: true});
 
     
     res.
@@ -36,7 +36,7 @@ export const updateUser = async(req,res)=> {
     .json({
         success:true ,
         message: "Successfully updated", 
-        data :updateUser,});
+        data :updatedUser,});
     }
     catch(err){
         res.
@@ -91,11 +91,7 @@ export const getAllUser = async(req,res)=> {
 
     try {
         const users = await User.find({})
-
-       
-        res.
-     status(200)
-     .json({
+        res.status(200).json({
          success:true ,
          message: "Successful", 
          data :users});
