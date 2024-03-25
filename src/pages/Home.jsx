@@ -2,11 +2,12 @@
 import React from "react";
 import '../styles/home.css'
 import { Container, Row, Col } from "reactstrap";
-import heroImg from '../assets/images/heroimg1.jpg';
+import heroImg from '../assets/images/bali.jpg';
+import heroImg01 from '../assets/images/heroimg1.jpg';
 import heroImg02 from '../assets/images/heroimg2.jpg';
 // import heroVideo from '../assets/images/hero-video.mp4'
 import worldImg from '../assets/images/world.jpg';
-import experienceImg from '../assets/images/heroimg1.jpg';
+import experienceImg from '../assets/images/experience.png';
 import Subtitle from "../shared/Subtitle";
 import SearchBar from "../shared/SearchBar";
 import ServiceList from "../services/ServiceList";
@@ -43,7 +44,7 @@ const Home = () => {
                     </Col>
                     <Col lg='2'>
                         <div className="hero__img-box mt-4">
-                            <img src={heroImg} alt="" />
+                            <img src={heroImg01} alt="" />
                         </div>
                     </Col>
                     <Col lg='2'>

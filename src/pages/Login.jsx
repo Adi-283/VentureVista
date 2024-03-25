@@ -1,58 +1,87 @@
-import React,  {useState}from "react";
-import { Container, Row, Col, Form, FormGroup, Button } from "reactstrap";
+import React,  {useState, useContext}from "react";
+import { Container, Row, Col, Form, FormGroup} from "reactstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { validateLogin, saveCredentialsToLocalStorage } from "../utils/auth";
+// import { validateLogin, saveCredentialsToLocalStorage } from "../utils/auth";
 import '../styles/login.css';
 import loginImg from '../assets/images/login.jpg'
 import userIcon from '../assets/images/user.jpg'
 
+import { AuthContext } from "../context/AuthContext";
+import { BASE_URL } from "../utils/config";
 
 const Login = () => {
     const [credentials, setCredentials] = useState({
-        email: '',
-        password: ''
+        email: undefined,
+        password: undefined,
     });
 
+    
+    const {dispatch} = useContext(AuthContext);
+    const navigate = useNavigate();
+
     const [error, setError] = useState('');
-    const navigate = useNavigate(); // Use useNavigate instead of useHistory
 
     const handleChange = (e) => {
         setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
         setError('');
     };
 
-    const handleClick = (e) => {
+    const handleClick = async e => {
         e.preventDefault();
-    
-        const validationErrors = validateLogin(credentials.email, credentials.password);
-    
-        if (validationErrors.email || validationErrors.password) {
-            setError(validationErrors);
-            return;
-        }
-    
-        // Check login logic here
-        const storedCredentials = JSON.parse(localStorage.getItem('user'));
-    
-        console.log("Entered Credentials:", credentials);
-        console.log("Stored Credentials:", storedCredentials);
-    
-        if (
-            storedCredentials &&
-            storedCredentials.email === credentials.email &&
-            storedCredentials.password === credentials.password
-        ) {
-            
-            saveCredentialsToLocalStorage(credentials);
-    
-            // Redirect to the home page using navigate
-            alert("Successfull login");
-            navigate('/');
-        } else {
-            setError({ email: 'Invalid email', password: 'Invalid password' });
-        }
-    };   return (
 
+        dispatch({type:'LOGIN_START'})
+        
+        try {
+            const res = await fetch(`${BASE_URL}/auth/login`, {
+                method: "post",
+                headers: {
+                    "content-type": "application/json",
+                },
+                credentials:'include',
+                body: JSON.stringify(credentials),
+            })
+            
+            const result = await res.json()
+            if(!res.ok) alert(result.message)
+
+            console.log(result.data);
+
+            dispatch({type:'LOGIN_SUCCESS', payload:result.data})
+            navigate('/')
+        } catch (err) {
+            dispatch({type:'LOGIN_FAILURE', payload:err.message})
+        }
+    
+        // const validationErrors = validateLogin(credentials.email, credentials.password);
+    
+        // if (validationErrors.email || validationErrors.password) {
+        //     setError(validationErrors);
+        //     return;
+        // }
+    
+        // // Check login logic here
+        // const storedCredentials = JSON.parse(localStorage.getItem('user'));
+    
+        // console.log("Entered Credentials:", credentials);
+        // console.log("Stored Credentials:", storedCredentials);
+    
+        // if (
+        //     storedCredentials &&
+        //     storedCredentials.email === credentials.email &&
+        //     storedCredentials.password === credentials.password
+        // ) {
+            
+        //     saveCredentialsToLocalStorage(credentials);
+    
+        //     // Redirect to the home page using navigate
+        //     alert("Successfull login");
+        //     navigate('/');
+        // } else {
+        //     setError({ email: 'Invalid email', password: 'Invalid password' });
+        // }
+    };   
+    
+    return (
     <section>
 
     <Container>
@@ -81,8 +110,6 @@ const Login = () => {
                          </Form>
 
                    </div>
-
-
                 </div>
             </Col>
         </Row>

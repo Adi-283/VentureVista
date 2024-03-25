@@ -2,7 +2,7 @@
 import React from "react";
 import '../styles/home.css'
 import { Container, Row, Col } from "reactstrap";
-import experienceImg from '../assets/images/heroimg1.jpg';
+import experienceImg from '../assets/images/about1.png';
 import Subtitle from "../shared/Subtitle";
 import MasonryImagesGallery from "../components/Image-gallery/MasonryImagesGallery";
 import Testimonials from "../components/Testimonial/Testimonials";

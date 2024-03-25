@@ -1,19 +1,24 @@
-import React,  {useState}from "react";
-import { Container, Row, Col, Form, FormGroup, Button } from "reactstrap";
+import React,  {useState, useContext}from "react";
+import { Container, Row, Col, Form, FormGroup} from "reactstrap";
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/login.css';
 import registerImg from '../assets/images/login.jpg'
 import userIcon from '../assets/images/user.jpg'
 
-import { validateRegistration, saveCredentialsToLocalStorage } from "../utils/auth"
+// import { validateRegistration, saveCredentialsToLocalStorage } from "../utils/auth"
+
+import { AuthContext } from "../context/AuthContext";
+import { BASE_URL } from "../utils/config";
 
 const Register = () => {
-    const navigate = useNavigate()
     const [credentials, setCredentials] = useState({
-        username: '',
-        email: '',
-        password: ''
+        username: undefined,
+        email: undefined,
+        password: undefined,
     });
+
+    const {dispatch} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const [error, setError] = useState({
         username: '',
@@ -26,21 +31,39 @@ const Register = () => {
         setError((prev) => ({ ...prev, [e.target.id]: '' }));
     };
 
-    const handleClick = (e) => {
+    const handleClick = async (e) => {
         e.preventDefault();
 
-        const validationErrors = validateRegistration(credentials.username, credentials.email, credentials.password);
+        try {
+            const res = await fetch(`${BASE_URL}/auth/register`, {
+                method: 'post',
+                headers:{
+                    'content-type':'application/json'
+                },
+                body: JSON.stringify(credentials)
+            })
+            const result = await res.json()
 
-        if (validationErrors.username || validationErrors.email || validationErrors.password) {
-            setError(validationErrors);
-            return;
+            if(!res.ok) alert(result.message)
+
+            dispatch({type:'REGISTER_SUCCESS'})
+            navigate('/login');
+
+        } catch (err) {
+            alert(err.message);
         }
-        saveCredentialsToLocalStorage(credentials);
 
-        navigate('/login');
+        // const validationErrors = validateRegistration(credentials.username, credentials.email, credentials.password);
+
+        // if (validationErrors.username || validationErrors.email || validationErrors.password) {
+        //     setError(validationErrors);
+        //     return;
+        // }
+        // saveCredentialsToLocalStorage(credentials);
+        // navigate('/login');
     };
-    return (
 
+    return (
     <section>
 
     <Container>
