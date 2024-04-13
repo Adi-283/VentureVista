@@ -6,7 +6,7 @@ import heroImg from '../assets/images/bali.jpg';
 import heroImg01 from '../assets/images/heroimg1.jpg';
 import heroImg02 from '../assets/images/heroimg2.jpg';
 // import heroVideo from '../assets/images/hero-video.mp4'
-import worldImg from '../assets/images/world.jpg';
+import worldImg from '../assets/images/travel.png';
 import experienceImg from '../assets/images/experience.png';
 import Subtitle from "../shared/Subtitle";
 import SearchBar from "../shared/SearchBar";
@@ -28,7 +28,7 @@ const Home = () => {
                         <div className="hero__content">
                             <div className="hero__subtitle d-flex align-items-center">
                                 <Subtitle subtitle={'Know Before You Go'}/>
-                                <img src={worldImg} alt="" />
+                                <img id= "world" src={worldImg} alt="" />
                             </div>
                             <h1>Traveling opens the door to creating <span className="highlights">memories</span></h1>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur cumque a ab libero. 
@@ -43,7 +43,7 @@ const Home = () => {
                         </div>
                     </Col>
                     <Col lg='2'>
-                        <div className="hero__img-box mt-4">
+                        <div className="hero__img-box hero__video-box mt-4">
                             <img src={heroImg01} alt="" />
                         </div>
                     </Col>
@@ -162,7 +162,7 @@ const Home = () => {
         </section>
 
         { /* ======================= testimonial section end ================= */}
-        {/* < Newsletter /> */}
+        < Newsletter />
     </>
     
 };

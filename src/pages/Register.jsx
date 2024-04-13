@@ -3,7 +3,7 @@ import { Container, Row, Col, Form, FormGroup} from "reactstrap";
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/login.css';
 import registerImg from '../assets/images/login.jpg'
-import userIcon from '../assets/images/user.jpg'
+import userIcon from '../assets/images/user.png'
 
 // import { validateRegistration, saveCredentialsToLocalStorage } from "../utils/auth"
 

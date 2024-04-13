@@ -17,3 +17,7 @@
     background-color: var(--secondary-color);
     color: #fff !important;
 }
+
+.common__section {
+    margin-top: 10px;
+}

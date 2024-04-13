@@ -3,7 +3,6 @@ import { Container, Row, Col, Form, FormGroup, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import '../styles/login.css';
 import registerImg from '../assets/images/login.jpg'
-import userIcon from '../assets/images/user.jpg'
 import Newsletter from "../shared/Newsletter";
 import contactImg from '../assets/images/Contact.png';
 const Register = () => {

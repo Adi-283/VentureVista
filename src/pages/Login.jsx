@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 // import { validateLogin, saveCredentialsToLocalStorage } from "../utils/auth";
 import '../styles/login.css';
 import loginImg from '../assets/images/login.jpg'
-import userIcon from '../assets/images/user.jpg'
+import userIcon from '../assets/images/user.png'
 
 import { AuthContext } from "../context/AuthContext";
 import { BASE_URL } from "../utils/config";
