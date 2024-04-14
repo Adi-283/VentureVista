@@ -30,10 +30,8 @@ const Home = () => {
                                 <Subtitle subtitle={'Know Before You Go'}/>
                                 <img id= "world" src={worldImg} alt="" />
                             </div>
-                            <h1>Traveling opens the door to creating <span className="highlights">memories</span></h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur cumque a ab libero. 
-                                Inventore nemo deserunt recusandae exercitationem qui, provident, aut, totam laborum 
-                                pariatur atque sed veniam? Deserunt, earum reprehenderit.
+                            <h1>Travel Opens Doors to Unforgettable <span className="highlights">Memories</span></h1>
+                            <p>Embark on a journey to the most breathtaking destinations around the globe. Explore hidden gems, experience diverse cultures, and create memories that last a lifetime.
                             </p>
                         </div>
                     </Col>
@@ -66,7 +64,7 @@ const Home = () => {
                             what we serve
                         </h5>
                         <h2 className="services__title">
-                            we offer our best services
+                            Tailored Experiences Just for You
                         </h2>
                     </Col>
                     <ServiceList />
@@ -79,7 +77,7 @@ const Home = () => {
                 <Row>
                     <Col lg='12' className="mb-5">
                         <Subtitle subtitle={'Explore'}></Subtitle>
-                        <h2 className="featured__tour-title">Our featured tours</h2>
+                        <h2 className="featured__tour-title">Discover Our Featured Tours</h2>
                     </Col>
                     <FeaturedTourList />
                 </Row>
@@ -94,8 +92,8 @@ const Home = () => {
                     <Col lg="6">
                         <div className="experience_content">
                             <Subtitle subtitle={'Experience'}/>
-                            <h2>With our all experience <br /> we will serve you</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quis. Voluptatum fuga reprehenderit autem nisi eveniet rem labore consectetur aut possimus ab dicta, illo eos optio a iusto exercitationem! Doloribus.</p>
+                            <h2>With Decades of Experience <br /> we will serve you</h2>
+                            <p>With over 20 years of expertise in crafting unforgettable journeys, we bring you the best travel experiences. Let us be your trusted companion in exploring the world.</p>
                         </div>
 
                         <div className="counter_wrapper d-flex align-items-center gap-5">
@@ -105,11 +103,11 @@ const Home = () => {
                             </div>
                             <div className="counter__box">
                                 <span>2k+</span>
-                                <h6>Regular Clients</h6>
+                                <h6>Satisfied Clients</h6>
                             </div>
                             <div className="counter__box">
                                 <span>15</span>
-                                <h6>Years Experience</h6>
+                                <h6>Years of Excellence</h6>
                             </div>
                         </div>
 
@@ -135,7 +133,7 @@ const Home = () => {
                     <Col lg="12">
                         <Subtitle subtitle={"Gallery"} />
                         <h2 className="gallery__title">
-                            Visit our customer's tour gallery
+                        Dive into Our Customer's Adventures
                         </h2>
                     </Col>
                     <Col lg="12">
@@ -152,7 +150,7 @@ const Home = () => {
                 <Row>
                     <Col lg = '12'>
                         <Subtitle subtitle={'Fans Love'} />
-                        <h2 className="testimonial__title">What our Fans say about us</h2>
+                        <h2 className="testimonial__title">Words from Our Happy Travelers</h2>
                     </Col>
                     <Col lg='12'>
                         <Testimonials />

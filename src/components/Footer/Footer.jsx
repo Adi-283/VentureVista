@@ -22,7 +22,7 @@ const quick__links = [
 
 const quick__links2 = [
     {
-        path: "/gallery",
+        path: "/about",
         display: "Gallery",
     },
     {
@@ -46,8 +46,7 @@ const Footer = () => {
                 <Col lg='3'>
                     <div className="logo">
                         <img src={logo} alt="" />
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum fugiat reiciendis 
-                           libero ut ducimus eaque.
+                        <p>Embark on a journey of discovery with Venture Vista. Explore the world's wonders, immerse yourself in diverse cultures, and create unforgettable memories.
                         </p>
                         <div className="social__links dp-flex align-items-center gap-4">
                             <span>
@@ -101,7 +100,7 @@ const Footer = () => {
                                     Address:
                                     </span>
                                 </h6>
-                                <p className="mb-0">10 Benesfort Drive</p>
+                                <p className="mb-0">Conestoga College</p>
                                 </ListGroupItem>
                                 <ListGroupItem  className="ps-0 border-0 d-flex align-items-center gap-3"> 
                                 <h6 className="mb-0 d-flex align-items-center gap-2"> 

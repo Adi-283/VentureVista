@@ -37,34 +37,34 @@ const Testimonials = () => {
     return (
         <Slider {...settings}>
             <div className='testimonial py-4 px-3'>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem enim laborum laudantium magnam, alias quasi libero? Blanditiis fugit accusantium dignissimos accusamus, quia rem repellat voluptates eveniet vel minus doloremque sapiente!</p>
+                <p>"Absolutely amazing experience! The trip was well-organized, and I got to explore breathtaking landscapes. I can't wait for my next adventure with this team!"</p>
                 <div className='d-flex align-items-center gap-4 mt-3'>
                     <img src={ava01} className='w-25 h-25 rounded-2' alt="" />
                     <div>
                         <h5 className='mb-0 mt-3'>john Doe</h5>
-                        <p>Customer</p>
+                        <p>Travel Enthusiast</p>
                     </div>
                 </div>
             </div>
 
             <div className='testimonial py-4 px-3'>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem enim laborum laudantium magnam, alias quasi libero? Blanditiis fugit accusantium dignissimos accusamus, quia rem repellat voluptates eveniet vel minus doloremque sapiente!</p>
+                <p>"Amazing customer service and attention to detail. They made sure every aspect of my trip was perfect. I highly recommend their services!"</p>
                 <div className='d-flex align-items-center gap-4 mt-3'>
                     <img src={ava02} className='w-25 h-25 rounded-2' alt="" />
                     <div>
                         <h5 className='mb-0 mt-3'>Chris lynn</h5>
-                        <p>Customer</p>
+                        <p>Adventure Seeker</p>
                     </div>
                 </div>
             </div>
 
             <div className='testimonial py-4 px-3'>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem enim laborum laudantium magnam, alias quasi libero? Blanditiis fugit accusantium dignissimos accusamus, quia rem repellat voluptates eveniet vel minus doloremque sapiente!</p>
+                <p>"A trip of a lifetime! I got to immerse myself in different cultures and explore stunning landmarks. Thank you for an unforgettable experience!"</p>
                 <div className='d-flex align-items-center gap-4 mt-3'>
                     <img src={ava03} className='w-25 h-25 rounded-2' alt="" />
                     <div>
                         <h5 className='mb-0 mt-3'>Franklin James</h5>
-                        <p>Customer</p>
+                        <p>Travel Enthusiast</p>
                     </div>
                 </div>
             </div>

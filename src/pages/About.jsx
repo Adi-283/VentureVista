@@ -20,8 +20,9 @@ const About = () => {
                     <Col lg="6">
                         <div className="experience_content">
                             <Subtitle subtitle={'Experience'}/>
-                            <h2>With our all experience <br /> we will serve you</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quis. Voluptatum fuga reprehenderit autem nisi eveniet rem labore consectetur aut possimus ab dicta, illo eos optio a iusto exercitationem! Doloribus.</p>
+                            <h2>With Decades of Experience <br /> we will serve you</h2>
+                            <p>With over 20 years of expertise in crafting unforgettable journeys, we bring you the best travel experiences. Let us be your trusted companion in exploring the world.</p>
+                            <p>"With a commitment to exceptional service and a passion for exploration, we strive to turn your travel dreams into unforgettable realities. Whether you seek the thrill of adventure or the tranquility of serene getaways, Venture Vista is your trusted companion on every journey."</p>
                         </div>
 
                         <div className="counter_wrapper d-flex align-items-center gap-5">
@@ -31,11 +32,11 @@ const About = () => {
                             </div>
                             <div className="counter__box">
                                 <span>2k+</span>
-                                <h6>Regular Clients</h6>
+                                <h6>Satisfied Clients</h6>
                             </div>
                             <div className="counter__box">
                                 <span>15</span>
-                                <h6>Years Experience</h6>
+                                <h6>Years of Excellence</h6>
                             </div>
                         </div>
 
@@ -61,7 +62,7 @@ const About = () => {
                     <Col lg="12">
                         <Subtitle subtitle={"Gallery"} />
                         <h2 className="gallery__title">
-                            Visit our customer's tour gallery
+                        Dive into Our Customer's Adventures
                         </h2>
                     </Col>
                     <Col lg="12">
@@ -88,7 +89,7 @@ const About = () => {
         </section> */}
 
         { /* ======================= testimonial section end ================= */}
-        {/* < Newsletter /> */}
+        < Newsletter />
     </>
     
 };
